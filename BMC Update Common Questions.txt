@@ -1,0 +1,14 @@
+
+***********************************************Important Notes********************************************************
+Starting from BMC 2.22.59c3b83a, when KCS Policy Control Mode is configured as "Deny ALL" on BMC EWS, BMC and FRUSDR cannot be upgraded/downgraded as expected behavior. Updates can still be performed via Redfish or BMC EWS
+
+ On BMC version 1.43.660a4315, security revision is upgraded.
+Q1: Why I can't downgrade to previous BMC version.
+A1: Downgrading below 1.43.660a4315 is not supported due to a security revision change.
+
+ On BMC version 1.90.0cf6e935, default cipher suite was chaged from version 3 to version 17.
+Q2: Why I can't connect with IPMI through LAN to BMC from version 1.90.0cf6e935.
+A2: Extra parameters for ipmitool through LAN is required since BMC firmware 1.90.0cf6e935, 
+     the “-C 17” is a must when using ipmitool to access BMC LAN.
+Please refer to the included "TA-1143_Extra_parameters_needed_for_ipmitool.pdf" for more information
+     
